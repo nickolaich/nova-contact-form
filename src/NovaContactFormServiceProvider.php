@@ -26,7 +26,10 @@ class NovaContactFormServiceProvider extends NovaApplicationServiceProvider
 
         $this->defineRoutes();
 
-        $this->mergeConfigFrom(__DIR__ . '/config/nova-contact-form.php', 'nova-contact-form');
+        $this->publishes([
+            __DIR__ . '/config/nova-contact-form.php' => config_path('nova-contact-form.php')
+        ], $key . 'nova-contact-form-config');
+
         $this->loadMigrationsFrom(__DIR__ . '/migrations');
         $this->loadTranslationsFrom(__DIR__ . '/lang', 'nova-contact-form');
 
@@ -46,6 +49,7 @@ class NovaContactFormServiceProvider extends NovaApplicationServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__ . '/config/nova-contact-form.php', 'nova-contact-form');
         $this->app->bind(IContactFormService::class, NovaContactFormService::class);
         $this->app->bind(IContactFormNotification::class, ContactFormSubmitted::class);
         $this->app->bind(IContactFormModel::class, ContactFormModel::class);
