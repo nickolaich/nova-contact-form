@@ -2,13 +2,13 @@
 
 Contact form data management for laravel nova projects
 
-Installation:
+## Installation
 
 ```bash
 composer require nickolaich/nova-contact-form
 ```
 
-Publish configuration file:
+## Publish configuration file
 
 ```bash
 php artisan vendor:publish --tag=nova-contact-form-config
