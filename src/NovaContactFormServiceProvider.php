@@ -2,6 +2,7 @@
 
 namespace Nickolaich\NovaContactForm;
 
+use Illuminate\Support\Facades\Route;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Nickolaich\NovaContactForm\Contracts\IContactFormModel;
@@ -25,9 +26,9 @@ class NovaContactFormServiceProvider extends NovaApplicationServiceProvider
 
         $this->defineRoutes();
 
-        $this->mergeConfigFrom(__DIR__.'/config/nova-contact-form.php', 'nova-contact-form');
-        $this->loadMigrationsFrom(__DIR__.'/migrations');
-        $this->loadTranslationsFrom(__DIR__.'/lang', 'nova-contact-form');
+        $this->mergeConfigFrom(__DIR__ . '/config/nova-contact-form.php', 'nova-contact-form');
+        $this->loadMigrationsFrom(__DIR__ . '/migrations');
+        $this->loadTranslationsFrom(__DIR__ . '/lang', 'nova-contact-form');
 
     }
 
@@ -60,12 +61,12 @@ class NovaContactFormServiceProvider extends NovaApplicationServiceProvider
         // If the routes have not been cached, we will include them in a route group
         // so that all of the routes will be conveniently registered to the given
         // controller namespace. After that we will load the route file.
-        if (! $this->app->routesAreCached()) {
+        if (!$this->app->routesAreCached()) {
             Route::group([
                 'prefix' => config('nova-contact-form.api_prefix'),
                 'namespace' => '\Nickolaich\NovaContactForm\Http\Controllers'],
                 function ($router) {
-                    require __DIR__.'/Http/routes.php';
+                    require __DIR__ . '/Http/routes.php';
                 }
             );
         }
