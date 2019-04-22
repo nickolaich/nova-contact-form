@@ -14,9 +14,22 @@ composer require nickolaich/nova-contact-form
 php artisan vendor:publish --tag=nova-contact-form-config
 ```
 
-If package auto-discovery is turned on - it will automatically load service provider, otherwise you need to load manually Nickolaich\NovaContactForm\NovaContactFormServiceProvider
+This is what configuration file looks like:
 
-Go to frontend, install dependencies:
+```php
+return [
+    'api_prefix' => 'api/site',
+    'notifications' => [
+        'channels' => ['mail'],
+        'recipient_email'=>env('CONTACT_FORM_RECIPIENT_EMAIL', ''),
+        'recipient_name'=>env('CONTACT_FORM_RECIPIENT_NAME', 'Admin'),
+    ]
+];
+```
+
+## Frontend
+
+For frontend, should install dependencies:
 
 ```
 yarn install
