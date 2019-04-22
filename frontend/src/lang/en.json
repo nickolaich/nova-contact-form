@@ -1,0 +1,23 @@
+{
+  "contacts": {
+    "overview": "It's a sample contact form",
+    "get_in_touch": "Get in touch",
+    "fields": {
+      "name": "Name*",
+      "email": "Email*",
+      "subject": "Subject*",
+      "message": "Write your message.......",
+      "phone": "Phone number",
+      "send": "Send it to me"
+    },
+    "errors": {
+      "name": "Name is required",
+      "email": "Email is required",
+      "subject": "Subject is required",
+      "text": "Message is required",
+      "phone": "Phone is required"
+    },
+    "sent": "We have sent your message. Please, wait for contact.",
+    "error": "Error sending message, check form below"
+  }
+}
