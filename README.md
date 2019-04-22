@@ -1,4 +1,4 @@
-# nova-contact-form
+# Nova Contact Form
 
 Contact form data management for laravel nova projects
 
