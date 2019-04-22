@@ -28,7 +28,7 @@ class NovaContactFormServiceProvider extends NovaApplicationServiceProvider
 
         $this->publishes([
             __DIR__ . '/config/nova-contact-form.php' => config_path('nova-contact-form.php')
-        ], $key . 'nova-contact-form-config');
+        ], 'nova-contact-form-config');
 
         $this->loadMigrationsFrom(__DIR__ . '/migrations');
         $this->loadTranslationsFrom(__DIR__ . '/lang', 'nova-contact-form');
